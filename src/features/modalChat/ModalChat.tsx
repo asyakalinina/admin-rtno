@@ -26,12 +26,17 @@ const ModalChat = ({ onClose, isOpen, dialog }: CreateGoalModalProps) => {
                         <div className={style.title}>Dialog ID: {dialog.id}</div>
                         <div className={style.chatContainer}>
                             {dialog.chatMessages.map((message, index) => (
-                                <ChatMessage
+                                <div
                                     key={index}
-                                    sender={message.sender}
-                                    message={message.message}
-                                    dateTime={formatDateTime(message.dateTime)}
-                                />
+                                    className={style.messageWrapper}
+                                    style={{ alignSelf: message.sender === 'Bot' ? 'flex-end' : 'flex-start' }}
+                                >
+                                    <ChatMessage
+                                        sender={message.sender}
+                                        message={message.message}
+                                        dateTime={formatDateTime(message.dateTime)}
+                                    />
+                                </div>
                             ))}
                         </div>
                         <div className={style.bottomPadding}/>
