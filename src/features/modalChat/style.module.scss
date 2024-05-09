@@ -9,7 +9,7 @@
   width: 500px;
   max-height: 386px;
   overflow: hidden;
-  padding: 24px;
+  padding: 24px 14px 24px 24px;
   .bottomPadding {
     height: 50px;
   }
@@ -22,6 +22,7 @@
   margin-top: 20px;
   display: flex;
   flex-direction: column;
+  padding-right: 10px;
 }
 
 //.bottomPadding {
