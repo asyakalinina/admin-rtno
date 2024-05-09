@@ -87,9 +87,7 @@ const Table: React.FC<TableProps> = ({ dialogs }) => {
                             </tr>
                         ))
                     ) : (
-                        <tr>
-                            <td colSpan={6} className={style.nothingFound}>Nothing found</td>
-                        </tr>
+                        <div className={style.nothingFound}>Nothing found</div>
                     )}
                     </tbody>
                 </table>

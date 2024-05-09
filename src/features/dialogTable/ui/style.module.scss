@@ -102,3 +102,11 @@
     color: #009879;
   }
 }
+.table tbody tr:not(.nothingFound):hover {
+  background-color: rgba(110, 115, 171, 0.2);
+}
+.nothingFound {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
