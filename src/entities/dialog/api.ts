@@ -407,6 +407,6 @@ export function fetchDialogData(): Promise<DialogData[]> {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(data);
-        }, 500);
+        }, 1000);
     });
 }

@@ -19,14 +19,13 @@ interface SortConfig {
 const Table = ({dialogs}: TableProps) => {
     const [sortConfig, setSortConfig] = useState<SortConfig>({ key: null, direction: 'ascending' });
     const [selectedDialog, setSelectedDialog] = useState<DialogData | null>(null);
-    console.log(selectedDialog, 777)
     const handleRowClick = (dialog: DialogData) => {
         setSelectedDialog(dialog);
     };
 
     const sortedDialogs = useMemo(() => {
         let sortableItems = [...dialogs];
-        if (sortConfig.key) {  // Проверяем, что ключ не null
+        if (sortConfig.key) {
             sortableItems.sort((a, b) => {
                 // @ts-ignore
                 if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -75,7 +74,7 @@ const Table = ({dialogs}: TableProps) => {
             </thead>
             <tbody>
             {sortedDialogs.map(dialog => (
-                <tr key={dialog.id} onClick={() => handleRowClick(dialog)}> {/* Обработчик клика на строку */}
+                <tr key={dialog.id} onClick={() => handleRowClick(dialog)} style={{cursor: "pointer"}}>
                     <td>{dialog.id}</td>
                     <td>{formatDateTime(dialog.startTime)}</td>
                     <td>{formatDateTime(dialog.lastMessageTime)}</td>

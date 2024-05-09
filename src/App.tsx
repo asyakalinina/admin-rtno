@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import {Route, BrowserRouter as Router, Routes, Navigate} from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import Layout from "./features/layout/Layout";
 
@@ -23,10 +23,10 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/" element={<Layout />}>
-                    <Route index element={<DashboardPage />} />
-                    <Route path="dashboard" element={<DashboardPage />} />
-                    <Route path="users" element={<UsersPage />} />
-                    <Route path="settings" element={<SettingsPage />} />
+                    <Route index element={<Navigate to="/dashboard" />} />
+                    <Route path="/dashboard" element={<DashboardPage />} />
+                    <Route path="/users" element={<UsersPage />} />
+                    <Route path="/settings" element={<SettingsPage />} />
                 </Route>
             </Routes>
         </Router>

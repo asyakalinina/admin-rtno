@@ -6,6 +6,7 @@ import style from "./style.module.scss";
 import { DialogData } from "../../entities/dialog/types";
 import ModalBack from "../modalBack";
 import ChatMessage from "./ui/ChatMessage";
+import {formatDateTime} from "../dialogTable/helpers";
 
 interface CreateGoalModalProps {
     onClose: () => void;
@@ -29,7 +30,7 @@ const ModalChat = ({ onClose, isOpen, dialog }: CreateGoalModalProps) => {
                                     key={index}
                                     sender={message.sender}
                                     message={message.message}
-                                    dateTime={message.dateTime}
+                                    dateTime={formatDateTime(message.dateTime)}
                                 />
                             ))}
                         </div>
