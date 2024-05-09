@@ -6,7 +6,7 @@ import style from "./style.module.scss";
 import { DialogData } from "../../entities/dialog/types";
 import ModalBack from "../modalBack";
 import ChatMessage from "./ui/ChatMessage";
-import {formatDateTime} from "../dialogTable/helpers";
+import {formatDate, formatDateTime, formatTime} from "../dialogTable/helpers";
 
 interface CreateGoalModalProps {
     onClose: () => void;
@@ -15,6 +15,7 @@ interface CreateGoalModalProps {
 }
 
 const ModalChat = ({ onClose, isOpen, dialog }: CreateGoalModalProps) => {
+    const dialogDate = dialog ? formatDateTime(dialog.chatMessages[0].dateTime) : "";
     return (
         <ModalBack isOpen={isOpen} onClose={onClose}>
             <div className={style.modal} style={{ borderRadius: "24px" }}>
@@ -25,6 +26,7 @@ const ModalChat = ({ onClose, isOpen, dialog }: CreateGoalModalProps) => {
                     <div>
                         <div className={style.title}>Dialog ID: {dialog.id}</div>
                         <div className={style.chatContainer}>
+                            <div className={style.dialogDate}>{formatDate(dialogDate)}</div>
                             {dialog.chatMessages.map((message, index) => (
                                 <div
                                     key={index}
@@ -34,7 +36,7 @@ const ModalChat = ({ onClose, isOpen, dialog }: CreateGoalModalProps) => {
                                     <ChatMessage
                                         sender={message.sender}
                                         message={message.message}
-                                        dateTime={formatDateTime(message.dateTime)}
+                                        dateTime={formatTime(message.dateTime)}
                                     />
                                 </div>
                             ))}

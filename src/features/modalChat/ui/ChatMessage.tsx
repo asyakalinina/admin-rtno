@@ -9,7 +9,6 @@ interface ChatMessageProps {
 
 const ChatMessage = ({ sender, message, dateTime }: ChatMessageProps) => {
     const isBot = sender.toLowerCase() === "bot";
-    console.log(sender, message)
 
     return (
         <div className={`${style.message} ${isBot ? style.botMessage : style.userMessage}`}>
@@ -21,4 +20,5 @@ const ChatMessage = ({ sender, message, dateTime }: ChatMessageProps) => {
 };
 
 export default ChatMessage;
+
 
