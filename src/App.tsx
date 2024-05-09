@@ -1,26 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Route, BrowserRouter as Router, Routes} from "react-router-dom";
+import DashboardPage from "./pages/DashboardPage";
+import Layout from "./features/layout/Layout";
+
+
+
+const UsersPage: React.FC = () => {
+    return <h1>Users</h1>;
+};
+
+
+
+const SettingsPage: React.FC = () => {
+    return <h1>Settings</h1>;
+};
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Layout />}>
+                    <Route index element={<DashboardPage />} />
+                    <Route path="dashboard" element={<DashboardPage />} />
+                    <Route path="users" element={<UsersPage />} />
+                    <Route path="settings" element={<SettingsPage />} />
+                </Route>
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;

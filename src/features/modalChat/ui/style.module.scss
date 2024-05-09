@@ -1,0 +1,29 @@
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.sender {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.messageText {
+  margin-bottom: 4px;
+}
+
+.dateTime {
+  font-size: 0.8em;
+  color: #666;
+}
+
+.userMessage {
+  background-color: #e6f2ff;
+  text-align: left;
+}
+
+.botMessage {
+  background-color: #eaf7ea;
+  text-align: right;
+}

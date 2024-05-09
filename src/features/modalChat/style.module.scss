@@ -1,0 +1,44 @@
+.modal {
+  position: relative;
+  box-sizing: border-box;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 21;
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-height: 386px;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.chatContainer {
+  max-height: 316px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  margin-top: 20px;
+  padding-right: 10px;
+}
+
+.bottomPadding {
+  height: 60px;
+  background-color: #ffffff;
+}
+
+.closeWrap {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.closeIcon {
+  color: #000000;
+  font-size: 24px;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}

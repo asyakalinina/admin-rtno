@@ -1,0 +1,21 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, auto) 1fr;
+  grid-template-rows: 100vh;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  overflow-y: hidden; /* Prevent scrolling */
+}
+
+.content {
+  overflow-y: auto; /* Allow content to scroll vertically */
+  padding-left: 200px;
+  grid-column: 2 / -1; /* Align content to the remaining grid columns */
+}
+

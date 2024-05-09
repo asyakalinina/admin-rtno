@@ -1,0 +1,55 @@
+.wrap {
+  padding: 20px;
+  background-color: #F5F6FB;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  h2 {
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+.filters {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.title {
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.titleDescWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resetButton {
+  background-color: #FC9E00;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.resetButton:hover {
+  background-color: #d58700;
+}
