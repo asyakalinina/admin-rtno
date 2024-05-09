@@ -89,7 +89,7 @@ const DashboardPage: React.FC = () => {
                 <>
                     <div className={style.block}>
                         <div className={style.titleDescWrapper}>
-                            <h2 className={style.title}>Dialog Table</h2>
+                            <h2 className={style.title}>Dialogs Table</h2>
                             <p>This section displays a table of dialogs, allowing you to view and filter
                                 conversations.</p>
                         </div>
