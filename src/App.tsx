@@ -3,6 +3,7 @@ import './App.css';
 import {Route, BrowserRouter as Router, Routes, Navigate} from "react-router-dom";
 import DashboardPage from "./pages/DashboardPage";
 import Layout from "./features/layout/Layout";
+import axios from "axios/index";
 
 
 

@@ -1,4 +1,5 @@
 import {DialogData} from "./types";
+import axios from "axios";
 
 export const data: DialogData[] = [
     {
@@ -403,10 +404,21 @@ export const data: DialogData[] = [
 ];
 
 
-export function fetchDialogData(): Promise<DialogData[]> {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(data);
-        }, 1000);
-    });
-}
+// export function fetchDialogData(): Promise<DialogData[]> {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve(data);
+//         }, 1000);
+//     });
+// }
+
+
+export const fetchDialogData = async (): Promise<DialogData[]> => {
+    try {
+        const response = await axios.get('http://localhost:8000/api/dialogs');
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching dialog data:', error);
+        throw error;
+    }
+};

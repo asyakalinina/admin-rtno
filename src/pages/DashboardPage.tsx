@@ -7,6 +7,7 @@ import CompanyFilter from "../features/dialogsTableFilters/CompanyFilter";
 import style from "./style.module.scss";
 import ChatCalendarChart from "../features/dialogCalendarChart/ChatCalendarChart";
 import {transformToChartData} from "../features/dialogCalendarChart/helpers";
+import axios from "axios";
 
 const DashboardPage: React.FC = () => {
     const [loading, setLoading] = useState<boolean>(true);
@@ -81,9 +82,10 @@ const DashboardPage: React.FC = () => {
         setChartCompanyFilters(new Set());
     };
 
+
     return (
         <div className={style.wrap}>
-            {loading ? ( // Если данные загружаются, отобразить лоадер
+            {loading ? (
                 <div>Loading...</div>
             ) : (
                 <>
